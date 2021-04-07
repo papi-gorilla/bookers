@@ -5,9 +5,13 @@ class BooksController < ApplicationController
   end
 
   def create
-    book=Book.new(book_params)
-    book.save
-    redirect_to books_path
+    @book=Book.new(book_params)
+    @books=Book.all
+    if @book.save
+      redirect_to book_path(@book.id), notice: "メッセージを保存しました"
+    else
+      render :index
+    end
   end
 
   def show
@@ -23,7 +27,7 @@ class BooksController < ApplicationController
     book.update(book_params)
     redirect_to book_path(book.id)
   end
-  
+
   def destroy
     book=Book.find(params[:id])
     book.destroy
