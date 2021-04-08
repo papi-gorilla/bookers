@@ -30,6 +30,10 @@ body{
   a:hover{color: #ffffff; background-color:#000000;}
 }
 
+p{
+  margin: 33px;
+}
+
 .text-form{
   margin-bottom: 10px;
 }
@@ -69,4 +73,8 @@ body{
     line-height: 18px;
     margin: 33px;
     padding-left: 40px;
+}
+
+.notice{
+  color: green;
 }
