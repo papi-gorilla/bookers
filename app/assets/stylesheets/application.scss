@@ -19,12 +19,13 @@
   box-sizing: border-box;
 }
 
+// 共通項目
 body{
-  color: #333333;
+  margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  color: #333333;
   a:link{color: #333333;}
   a:visited{color: #666666;}
   a:hover{color: #ffffff; background-color:#000000;}
@@ -34,6 +35,12 @@ p{
   margin: 33px;
 }
 
+// フラッシュメッセージ
+.notice{
+  color: green;
+}
+
+// 投稿フォーム
 .text-form{
   margin-bottom: 10px;
 }
@@ -50,6 +57,7 @@ p{
   padding: 1px 6px;
 }
 
+// エラーメッセージ
 .error{
   width: 450px;
   background-color: #f0f0f0;
@@ -59,22 +67,17 @@ p{
 }
 
 .error>h2{
-  text-align: left;
-  font-weight: bold;
+  background-color: #c00;
+  margin: -7px -7px 0 -7px;
   padding: 5px 5px 5px 15px;
   font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0;
-  background-color: #c00;
   color: #fff;
+  text-align: left;
+  font-weight: bold;
 }
 
 .error>ul{
+  margin: 33px;
+  padding-left: 40px;
     line-height: 18px;
-    margin: 33px;
-    padding-left: 40px;
-}
-
-.notice{
-  color: green;
 }
