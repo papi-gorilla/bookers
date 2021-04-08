@@ -1,42 +1,44 @@
-<%= flash[:destroyed] %>
+<body>
+  <%= flash[:destroyed] %>
 
-<h1>Books</h1>
+  <h1>Books</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @books.each do |book| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <td><%= link_to "Show", book_path(book.id) %></td>
-        <td><%= link_to "Edit", edit_book_path(book.id) %></td>
-        <td><%= link_to "Destroy", book_path(book.id), method: :delete %></td>
+        <th>Title</th>
+        <th>Body</th>
+        <th colspan ="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= book.title %></td>
+          <td><%= book.body %></td>
+          <td><%= link_to "Show", book_path(book.id) %></td>
+          <td><%= link_to "Edit", edit_book_path(book.id) %></td>
+          <td><%= link_to "Destroy", book_path(book.id), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<h2>New book</h2>
+  <h2>New book</h2>
 
-
-
-<%= form_with model:@book, local:true do |f| %>
-
-  <%= render 'layouts/error_messages', model: f.object %>
-
-  <label>Title</label>
-  <%= f.text_field :title %>
-
-  <label>Body</label>
-  <%= f.text_area :body %>
-
-  <%= f.submit "Create Book" %>
-<% end %>
+  <%= form_with model:@book, local:true do |f| %>
+    <%= render "layouts/error_messages", model: f.object %>
+    <div class="text-form">
+      <label>Title</label><br>
+      <%= f.text_field :title, class: "title-box"%>
+    </div>
+    <div class="text-form">
+      <label>Body</label><br>
+      <%= f.text_area :body, class: "body-box" %>
+    </div>
+    <div class="text-form">
+      <%= f.submit "Create Book", class: "button-box" %>
+    </div>
+    
+  <% end %>
+</body>
